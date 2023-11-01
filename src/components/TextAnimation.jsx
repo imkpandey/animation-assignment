@@ -4,7 +4,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 
 const TextAnimation = () => {
-  //Lenis smoothscroll
   const lenis = new Lenis();
 
   lenis.on("scroll", ScrollTrigger.update);
@@ -37,7 +36,7 @@ const TextAnimation = () => {
       words[0],
       {
         x: () => -window.scrollY / 0.35,
-        y: () => window.scrollY / 0.1,
+        y: () => window.scrollY / 2,
         duration: 2,
       },
       "<"
@@ -47,7 +46,7 @@ const TextAnimation = () => {
       words[1],
       {
         x: () => -window.scrollY / 0.35,
-        y: () => window.scrollY / 0.1,
+        y: () => window.scrollY / 2,
         color: "white",
         letterSpacing: "-5px",
         duration: 2,
@@ -59,7 +58,7 @@ const TextAnimation = () => {
       words[2],
       {
         x: () => window.scrollY / 0.75,
-        y: () => window.scrollY / 0.1,
+        y: () => window.scrollY / 2,
         opacity: 0.2,
         color: "white",
         letterSpacing: "-5px",
@@ -82,7 +81,7 @@ const TextAnimation = () => {
     tl.to(
       ".hr",
       {
-        borderColor: "transparent",
+        borderColor: "black",
         duration: 2,
       },
       "<"
@@ -187,43 +186,45 @@ const TextAnimation = () => {
     : {};
 
   return (
-    <div className="container relative -mt-6 h-[105vh] mx-auto flex justify-center items-center w-full overflow-hidden">
-      <img
-        src={focusBackground}
-        alt="focus"
-        className={`focus fixed w-full -mt-6 ${focusStyle}`}
-      />
-      <div className="hr w-fit py-8 flex border-b-2 relative">
-        <div className="blur-active flex flex-col mt-[-65px] gap-4 blur-active">
-          <img src="/logo.png" alt="logo" className="word w-40 mx-4" />
+    <div className="main h-[110vh] overflow-y-scroll">
+      <div className="container fixed left-1/2 transform -translate-x-1/2 -mt-6 h-[110vh] mx-auto flex justify-center items-center w-full overflow-hidden">
+        <img
+          src={focusBackground}
+          alt="focus"
+          className={`focus fixed w-full -mt-6 ${focusStyle}`}
+        />
+        <div className="hr w-fit py-8 flex border-b-2 relative">
+          <div className="blur-active flex flex-col mt-[-65px] gap-4 blur-active">
+            <img src="/logo.png" alt="logo" className="word w-40 mx-4" />
+            <h1 className="word text-9xl mx-4 font-medium text-[#DEFC01] tracking-[-15px] uppercase">
+              Let&apos;<span className="text-white">s</span>
+            </h1>
+          </div>
+          <div className="fixed flex justify-between items-center gap-28 py-8 ml-96 -mt-4 invisible">
+            <div className="blur-active header flex flex-col justify-center items-center gap-6 opacity-0 invisible">
+              <h1 className="text-2xl text-white font-medium">Schedule Call</h1>
+              <div className="button-box py-2 w-48 bg-[#dcf901] hover:bg-white rounded-3xl cursor-pointer">
+                <h1 className="button-text text-2xl text-center text-black font-semibold tracking-tighter">
+                  Call Us
+                </h1>
+              </div>
+            </div>
+            <div className="blur-active header flex flex-col justify-center items-center gap-6 opacity-0 invisible">
+              <h1 className="text-2xl text-white font-medium">Contact Us</h1>
+              <div className="button-box py-2 w-48 bg-[#dcf901] hover:bg-white rounded-3xl cursor-pointer">
+                <h1 className="button-text text-2xl text-center text-black font-semibold tracking-tighterr">
+                  Contact
+                </h1>
+              </div>
+            </div>
+          </div>
           <h1 className="word text-9xl mx-4 font-medium text-[#DEFC01] tracking-[-15px] uppercase">
-            Let&apos;<span className="text-white">s</span>
+            Team
+          </h1>
+          <h1 className="word text-9xl mx-4 font-medium text-[#DEFC01] tracking-[-15px] uppercase">
+            Up
           </h1>
         </div>
-        <div className="fixed flex justify-between items-center gap-28 py-8 ml-96 -mt-2 invisible">
-          <div className="blur-active header flex flex-col justify-center items-center gap-6 opacity-0 invisible">
-            <h1 className="text-2xl text-white font-medium">Schedule Call</h1>
-            <div className="button-box py-2 w-48 bg-[#dcf901] hover:bg-white rounded-3xl cursor-pointer">
-              <h1 className="button-text text-2xl text-center text-black font-semibold tracking-tighter">
-                Call Us
-              </h1>
-            </div>
-          </div>
-          <div className="blur-active header flex flex-col justify-center items-center gap-6 opacity-0 invisible">
-            <h1 className="text-2xl text-white font-medium">Contact Us</h1>
-            <div className="button-box py-2 w-48 bg-[#dcf901] hover:bg-white rounded-3xl cursor-pointer">
-              <h1 className="button-text text-2xl text-center text-black font-semibold tracking-tighterr">
-                Contact
-              </h1>
-            </div>
-          </div>
-        </div>
-        <h1 className="word text-9xl mx-4 font-medium text-[#DEFC01] tracking-[-15px] uppercase">
-          Team
-        </h1>
-        <h1 className="word text-9xl mx-4 font-medium text-[#DEFC01] tracking-[-15px] uppercase">
-          Up
-        </h1>
       </div>
     </div>
   );
